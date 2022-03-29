@@ -26,6 +26,8 @@ TIP: Fermer chaque projet Eclipse (sans supprimer les sources) avant de passer �
 
 IMPORTANT: Vous ne pourrez pas faire de `push` avec votre mot de passe (Github n'authorise plus que les access tokens), veuillez utiliser login/<access token> (voir pré-requis plus haut pour le créer).
 
+NOTE: Pour mettre votre VM en plein écran, modifier la résolution dans la VM (bouton droit sur l'écran -> `Display settings` puis dans le menu VirtualBox, utiliser l'option `View` -> `Full screen mode`. Il peut éventuellement être nécessaire de redemarrer votre VM pour que ce soit pris en compte.
+
 ### Exercice 1 - Etudier une API REST sans couches
 _Temps estimé : 40 mins_
 
