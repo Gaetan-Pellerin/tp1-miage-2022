@@ -22,13 +22,13 @@ public class TodoListController {
 	
 	
 	private GetTodoItems getTodoItemsQuery;
-	// A compléter
+	private AddTodoItem addTodoItemQuery;
 	
 	
 	@Inject
-	//A compléter
-	public TodoListController(GetTodoItems getTodoItemsQuery ) {
+	public TodoListController(GetTodoItems getTodoItemsQuery,  AddTodoItem addTodoItemQuery) {
 		this.getTodoItemsQuery = getTodoItemsQuery;
+		this.addTodoItemQuery = addTodoItemQuery;
 	}
 	
 	@GetMapping("/todos")
@@ -37,10 +37,9 @@ public class TodoListController {
 	}
 	
 	
-	// Endpoint de type POST vers "/todos"
-	// A compléter
+	@PostMapping("/todos")
 	public void ajouterItem(@RequestBody TodoItem item) {
-		// A compléter		
+		this.addTodoItemQuery.addTodoItem(item);	
 	}
 	
 	
