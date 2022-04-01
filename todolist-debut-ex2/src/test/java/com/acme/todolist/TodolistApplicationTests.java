@@ -59,7 +59,26 @@ class TodolistApplicationTests {
     	assertTrue(item.finalContent().contains("[LATE!] "));
     }
 
-    
-	
+    @Test
+    void justCreatedIsNotLate() {
+	item = new TodoItem("5", Instant.now(), "fifth item just created");
+	assertFalse(item.isLate());
+   }
 
+   @Test
+   void ThirtyMinutesOldIsNotLate() {
+	item = new TodoItem("6", Instant.now().minus(25,ChronoUnit.HOURS), "Sixth item created 25h ago");
+	assertTrue(item.isLate());
+   }
+
+   @Test
+   void TwoDaysOldIsLate() {
+	item = new TodoItem("7", Instant.now().minus(1, ChronoUnit.DAYS), "seventh item created a day ago");
+	assertFalse(item.isLate());
+   }
+    @Test
+    void OneDayOneSecondOldIsLate() {
+    	item = new TodoItem("8",Instant.now().minus(1,ChronoUnit.DAYS).minus(1,ChronoUnit.SECONDS),"Eighth item created a day ago - 1s");
+    	assertTrue(item.finalContent().contains("[LATE!] "));
+    }
 }
